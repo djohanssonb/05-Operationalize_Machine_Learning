@@ -13,7 +13,13 @@ jobs:
             - v1-dependencies-
       - 
         run: 
-          command: "python3 -m venv venv . venv/bin/activate make install # Install hadolint wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 &&chmod +x /bin/hadolint"
+          command: |
+              python3 -m venv venv
+              . venv/bin/activate
+              make install
+              # Install hadolint
+              wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64 &&\
+                  chmod +x /bin/hadolint
           name: "install dependencies"
       - 
         save_cache: 
@@ -22,7 +28,9 @@ jobs:
             - ./venv
       - 
         run: 
-          command: ". venv/bin/activate make lint"
+          command: |-
+              . venv/bin/activate
+              make lint
           name: "run lint"
     working_directory: ~/repo
 version: 2
