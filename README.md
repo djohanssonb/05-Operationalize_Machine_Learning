@@ -1,4 +1,5 @@
-﻿[![djohanssonb](https://circleci.com/gh/djohanssonb/05-Operationalize_Machine_Learning.svg?style=svg)](<LINK>)
+﻿[![djohanssonb](https://circleci.com/gh/djohanssonb/05-Operationalize_Machine_Learning/tree/master.svg?style=svg&circle-token=a4bc0e683200736798591a09c5e7f680a767461e)](<LINK>)
+
 
 ## Project Overview
 
