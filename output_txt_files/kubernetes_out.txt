@@ -1,1 +1,36 @@
-<paste log output from Kubernetes-mediated prediction, here>
+#### OUTPUT FROM  ./run_kubernetes.sh
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/05-machinelearning created
+NAME                                  READY   STATUS              RESTARTS   AGE
+05-machinelearning-77894b5c49-fjgg8   0/1     ContainerCreating   0          1s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+service/machinelearning exposed
+
+
+
+######## EXTRA after exposure: kubectl get pods
+NAME                                  READY   STATUS    RESTARTS   AGE
+05-machinelearning-77894b5c49-fjgg8   1/1     Running   0          4m18s
+
+######## STATUS: kubectl get svc
+NAME              TYPE           CLUSTER-IP     EXTERNAL-IP                                                                PORT(S)        AGE
+kubernetes        ClusterIP      10.100.0.1     <none>                                                                     443/TCP        90m
+machinelearning   LoadBalancer   10.100.42.86   a3478a6a1f4ad43bd8d9bf8be94417cc-1231642152.eu-north-1.elb.amazonaws.com   80:31516/TCP   2m15s
+
+
+####### Make prediciton with EKS: ./make_prediction_EKS.sh > out.txt
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   260  100    48  100   212    205    905 --:--:-- --:--:-- --:--:--  1358
+
+
+####### Out.txt (also in the root)
+Port: 80
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
