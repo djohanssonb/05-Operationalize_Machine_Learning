@@ -1,4 +1,4 @@
-﻿https://app.circleci.com/pipelines/github/djohanssonb/05-Operationalize_Machine_Learning
+﻿[![djohanssonb](https://circleci.com/gh/djohanssonb/05-Operationalize_Machine_Learning.svg?style=svg)](<LINK>)
 
 ## Project Overview
 
